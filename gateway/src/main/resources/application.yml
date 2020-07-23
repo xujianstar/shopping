@@ -1,0 +1,49 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: gateway-web
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+            - id: changgou_goods_route
+              # [1] 非负载均衡
+              # uri: http://localhost:7005
+              # [2]客户端负载均衡
+              uri: lb://goods
+              # 断言
+              predicates:
+                # [1]host 过滤,针对域名
+                #- Host=cloud.itheima.com**
+                # [2]路径匹配过滤
+                # - Path=/api/ok/brand/**
+                - Path=/**
+                # [3] StripPrefix 过滤配置
+              filters:
+                #- StripPrefix=2
+                - PrefixPath=/brand
+            #用户微服务
+            - id: changgou_user_route
+              uri: lb://user
+              predicates:
+                - Path=/api/user/**,/api/address/**,/api/areas/**,/api/cities/**,/api/provinces/**
+              filters:
+                - StripPrefix=1
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xujian:123456@127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+

@@ -1,0 +1,10 @@
+server:
+  port: 7003
+spring:
+  application:
+    name: eureka_ribbon
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xujian:123456@peer1:7001/eureka,http://xujian:123456@peer2:7701/eureka
+

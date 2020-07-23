@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf的入门</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    第一个thymeleaf程序:
+    <p th:text="${hello}">
+    </p>
+    <table>
+        <tr>
+            <td>下标</td>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>住址</td>
+        </tr>
+
+       <tr th:each="user,userStat:${users}">
+            <td th:text="${userStat.index}"></td>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.address}"></td>
+        </tr>
+    </table>
+
+<div th:each="map,mapstat:${map}">
+    <div th:text="${map}"></div>
+    <div th:txt="${mapstat.current.key}"></div>
+    <div th:txt="${mapstat.current.value}"></div>
+    ==============================================
+</div>
+
+<div th:each="nm,nmstat:${names}">
+    <span th:text="${nmstat.count}"></span>
+    <span th:text="${nm}"></span>
+</div>
+
+    <div th:text="${#dates.format(now,'yyyy-MM-dd')}">
+    </div>
+
+<div th:if="${(age>=18)}"> 成年人</div>
+
+
+
+</body>
+</html>

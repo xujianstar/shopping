@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="changgou-user-oauth" />
+        <module name="eureka_consumer" />
+        <module name="service_file" />
+        <module name="gateway" />
+        <module name="code-template" />
+        <module name="service-user" />
+        <module name="common-db" />
+        <module name="service-search" />
+        <module name="common" />
+        <module name="eureka_bak" />
+        <module name="service_goods" />
+        <module name="eureka" />
+        <module name="service_files" />
+        <module name="chapter13" />
+        <module name="web" />
+        <module name="eureka_produce" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka_ribbon" target="1.8" />
+      <module name="service-good-api" target="1.8" />
+      <module name="service-search-api" target="1.8" />
+      <module name="service_api" target="1.8" />
+      <module name="service_file" target="1.8" />
+      <module name="springboot-thymeleaf" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="changgou-user-oauth" options="-parameters" />
+      <module name="chapter13" options="" />
+      <module name="common" options="-parameters" />
+      <module name="common-db" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="eureka_bak" options="-parameters" />
+      <module name="eureka_consumer" options="-parameters" />
+      <module name="eureka_produce" options="-parameters" />
+      <module name="eureka_ribbon" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="service" options="-parameters" />
+      <module name="service-good-api" options="-parameters" />
+      <module name="service-search" options="-parameters" />
+      <module name="service-search-api" options="-parameters" />
+      <module name="service-user" options="-parameters" />
+      <module name="service_api" options="-parameters" />
+      <module name="service_file" options="-parameters" />
+      <module name="service_files" options="-parameters" />
+      <module name="service_goods" options="-parameters" />
+      <module name="springboot-thymeleaf" options="-parameters" />
+      <module name="web" options="-parameters" />
+    </option>
+  </component>
+</project>

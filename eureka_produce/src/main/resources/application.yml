@@ -1,0 +1,12 @@
+server:
+  port: 7702
+spring:
+  application:
+    name: eurekaproduce
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://xujian:123456@peer1:7001/eureka,http://xujian:123456@peer2:7701/eureka
+
