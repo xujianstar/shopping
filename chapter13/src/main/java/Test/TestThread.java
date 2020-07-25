@@ -17,6 +17,7 @@ public class TestThread {
                 }
             });
             t.start();
+            t.start();
         System.out.println("主线程开始调用t.sleep()");
         try {
             t.sleep(1000*10);
