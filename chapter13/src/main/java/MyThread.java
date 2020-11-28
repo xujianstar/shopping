@@ -1,18 +1,22 @@
 import groovy.transform.Synchronized;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class MyThread extends Thread{
     @Override
     public void run() {
-        synchronized(this){
-            try {
-                TimeUnit.SECONDS.sleep(3);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        while(true){
+            synchronized(this){
+                try {
+                    System.out.println("线程["+Thread.currentThread().getName()+"]开始睡眠");
+                    Thread.currentThread().sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            System.out.println(Thread.currentThread().getName()+"运行");
         }
-        System.out.println(Thread.currentThread().getName()+"运行");
     }
 
     public static void main(String[] args) {
@@ -30,6 +34,9 @@ public class MyThread extends Thread{
         myThread1.start();
         Thread myThread2 = new Thread(thread);
         myThread2.start();
+
+
+
 
     }
 }

@@ -20,6 +20,11 @@
         <module>web</module>
         <module>common-db</module>
         <module>changgou-user-oauth</module>
+        <module>springbootAdmin</module>
+        <module>zipkin</module>
+        <module>config</module>
+        <module>config-client</module>
+
 
         <!--        <module>springboot-thymeleaf</module>-->
         <!--<module>eureka_ribbon</module>-->

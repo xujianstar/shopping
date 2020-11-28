@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: APP
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xujian:123456@127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+
+

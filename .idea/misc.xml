@@ -7,6 +7,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/code-template/pom.xml" />
         <option value="$PROJECT_DIR$/chapter13/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo_provider/pom.xml" />
+        <option value="$PROJECT_DIR$/sessionShare1/pom.xml" />
+        <option value="$PROJECT_DIR$/sessionShare2/pom.xml" />
+        <option value="$PROJECT_DIR$/shardingjdbcdemo/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -18,6 +23,10 @@
         <option value="$PROJECT_DIR$/service_file/pom.xml" />
       </set>
     </option>
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://dubbo.apache.org/schema/dubbo/dubbo.xsd" location="$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2020.1/extResources/de99eb83_dubbo.xsd" />
+    <resource url="https://code.alibabatech.com/schema/dubbo/dubbo.xsd" location="$PROJECT_DIR$" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

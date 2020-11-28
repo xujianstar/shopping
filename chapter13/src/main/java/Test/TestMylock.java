@@ -21,7 +21,7 @@ public class TestMylock {
     public static void main(String[] args) throws InterruptedException {
         TestMylock  testMylock = new TestMylock ();
         AtomicInteger num = new AtomicInteger(0);
-        for (int number = 0; number < 10000; number++) {
+        for (int number = 0; number < 100000; number++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {

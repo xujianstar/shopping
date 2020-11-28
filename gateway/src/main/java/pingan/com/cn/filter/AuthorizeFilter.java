@@ -22,7 +22,7 @@ import reactor.core.publisher.Mono;
  * @package com.changgou.filter *
  * @since 1.0
  */
-@Component
+
 public class AuthorizeFilter implements GlobalFilter, Ordered {
     private static final String AUTHORIZE_TOKEN = "Authorization";
     @Override
@@ -34,7 +34,6 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
         ServerHttpResponse response = exchange.getResponse();
 
         //3.判断 是否为登录的URL 如果是 放行
-        //  //如果是登录、goods等开放的微服务[这里的goods部分开放],则直接放行,这里不做完整演示，完整演示需要设计一套权限系统
         if(request.getURI().getPath().startsWith("/api/user/login")){
             return chain.filter(exchange);
         }
@@ -68,7 +67,7 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
 
         try {
             Claims claims = JwtUtil.parseJWT(token);
-            request.mutate().header(AUTHORIZE_TOKEN,claims.toString());
+
         } catch (Exception e) {
             e.printStackTrace();
             //解析失败

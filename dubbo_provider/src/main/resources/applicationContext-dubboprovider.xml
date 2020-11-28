@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+
+
+
+    <!-- 给当前服务提供者命名 -->
+    <!-- 协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受。 -->
+    <dubbo:application  name="dubbo_provider"/>
+    <!-- 指定zookeeper注册中心的address和port，如果使用的是redis则address使用redis的address -->
+    <dubbo:registry address="zookeeper://112.74.82.64:2181" ></dubbo:registry>
+    <!-- 协议必须使用dubbo，端口号是提供一个可供消费者使用的端口 -->
+    <!--  协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受。  -->
+    <!-- -->
+    <dubbo:protocol name="dubbo" port="20882" accesslog="true"/>
+    <!-- 开启注解扫描，使dubbo的注解生效-->
+    <dubbo:annotation package="com.alibaba.provider"/>
+
+    <!-- •<dubbo:service connections=”2”>或<dubbo:reference connections=”2”>表示该服务使用独立两条长连接。 -->
+    <!-- 服务配置，用于暴露一个服务，定义服务的元信息， -->
+    <!-- 一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心。-->
+    <dubbo:service interface="com.alibaba.provider.HelloService" ref="helloService" />
+
+    <bean id="helloService" class="com.alibaba.provider.HelloServiceImpl"/>
+
+</beans>

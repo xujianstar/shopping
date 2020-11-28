@@ -146,7 +146,7 @@ public class UserController {
         }
 
         //3如果不为空格 判断 密码是否正确 正确则登录成功
-
+        BCrypt.checkpw("","");
         if(password.equals(user.getPassword())){
             //成功
             Map<String,Object> info = new HashMap<String,Object>();

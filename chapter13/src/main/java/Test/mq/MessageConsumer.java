@@ -23,6 +23,7 @@ public class MessageConsumer {
             Destination queue = session.createQueue("JMSXGroupID");
             // 5、创建消息生产者
             javax.jms.MessageConsumer messageConsumer = session.createConsumer(queue,"JMSXGroupID='B'");
+            messageConsumer.receive();
             System.out.println("接收消息之前123");
 //      System.out.println("收到消息=" + message.getText());
             messageConsumer.setMessageListener(new MessageListener(){

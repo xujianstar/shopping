@@ -1,0 +1,15 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    register-with-eureka: false #是否将自己注册到eureka中
+    fetch-registry: false       #是否从eureka中获取信息
+    service-url:
+      defaultZone: http://peer2:7701/eureka/
+spring:
+  security:
+    user:
+      name: xujian
+      password: 123456

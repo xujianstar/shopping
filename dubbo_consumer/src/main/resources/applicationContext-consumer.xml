@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+<!--为服务消费者在向注册中心订阅服务时起个名字-->
+    <dubbo:application name="dubboConsumer"/>
+    <!--连接到zookeeper注册中心-->register-with-eureka
+    <dubbo:registry  address="zookeeper://112.74.82.64:2181" timeout="8000" ></dubbo:registry>
+
+    <!-- •<dubbo:service connections=”2”>或<dubbo:reference connections=”2”>表示该服务使用独立两条长连接。 -->
+    <!-- 引用服务配置，用于创建一个远程服务代理，一个引用可以指向多个注册中心。 -->
+    <dubbo:reference id="helloService" interface="com.alibaba.provider.HelloService">
+    </dubbo:reference>
+</beans>

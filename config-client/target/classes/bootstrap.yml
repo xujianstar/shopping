@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8769
+      fail-fast: true
+  profiles:
+    active: dev
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://xujian:123456@peer1:7001/eureka

@@ -15,7 +15,7 @@ eureka:
     prefer-ip-address: true
 feign:
   hystrix:
-    enabled: true
+    enabled: truegetSession
 ribbon:
   ReadTimeout: 300000
 

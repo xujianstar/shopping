@@ -8,8 +8,6 @@ import org.springframework.jms.annotation.EnableJms;
 /**
  * Created by fangzhipeng on 2017/5/15.
  */
-@SpringBootApplication
-@EnableJms
 public class SpringbootSecurityApplication {
 
 	public static void main(String[] args) {

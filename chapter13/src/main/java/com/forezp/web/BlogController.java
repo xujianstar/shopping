@@ -3,7 +3,6 @@ package com.forezp.web;
 import com.forezp.entity.Blog;
 import com.forezp.service.impl.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +31,6 @@ public class BlogController {
         return new ModelAndView("blogs/list", "blogModel", model);
     }
 
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")  //
     @GetMapping(value = "/{id}/deletion")
     public ModelAndView delete(@PathVariable("id") Long id, Model model) {
         blogService.deleteBlog(id);
